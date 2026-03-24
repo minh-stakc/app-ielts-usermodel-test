@@ -8,9 +8,8 @@ const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 const app = express();
 const bcryptSalt =  bcrypt.genSaltSync(10);
-const jwtSecret = 'f8u230f20u203f20i3o';
-
 require("dotenv").config();
+const jwtSecret = process.env.JWT_SECRET || 'change-me';
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
